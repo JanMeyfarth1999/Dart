@@ -50,14 +50,27 @@ void main() {
   } else {
     print('Geschlecht: Weiblich');
   }
-
+  DateTime jetzt = DateTime.now();
+ 
   if(alterZahl < 40){
     print('Hallo $vorname');
   }
-  else if(alterZahl >= 40 && auswahlGeschlecht == 1){
-    print('Guten Tag Herr $vorname $nachname');
+  else if (jetzt.hour >= 5 && jetzt.hour < 11 && alterZahl >= 40 && auswahlGeschlecht == 1) {
+  print('Guten Morgen Herr $vorname $nachname ');
   }
-   else if(alterZahl >= 40 && auswahlGeschlecht == 2){
-    print('Guten Tag Frau $vorname $nachname');
+  else if (jetzt.hour >= 11 && jetzt.hour < 18 && alterZahl >= 40 && auswahlGeschlecht == 1) {
+  print('Guten Tag Herr $vorname $nachname ');
+  }
+  else if (jetzt.hour >= 18 && jetzt.hour < 05 && alterZahl >= 40 && auswahlGeschlecht == 1) {
+  print('Guten Abend Herr $vorname $nachname ');
+  }
+    else if (jetzt.hour >= 5 && jetzt.hour < 11 && alterZahl >= 40 && auswahlGeschlecht == 2) {
+  print('Guten Morgen Frau $vorname $nachname ');
+  }
+  else if (jetzt.hour >= 11 && jetzt.hour < 18 && alterZahl >= 40 && auswahlGeschlecht == 2) {
+  print('Guten Tag Frau $vorname $nachname ');
+  }
+  else if (jetzt.hour >= 18 && jetzt.hour < 05 && alterZahl >= 40 && auswahlGeschlecht == 2) {
+  print('Guten Abend Frau $vorname $nachname ');
   }
 }
